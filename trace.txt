@@ -1,0 +1,80 @@
+#This is the trace for running ./printer.bash, which initializes 3 printers 
+#&&& ./client.bash, which runs 15 client jobs (unique ID’s)
+
+Printer 0 entering shared memory
+Printer 1 entering shared memory
+Printer 2 entering shared memory
+Client 2 has 1 pages to print, puts request in Buffer
+Client 5 has 1 pages to print, puts request in Buffer
+Printer 1 starts printing 1 pages from Client 2
+Printer 0 starts printing 1 pages from Client 5
+Client 3 has 6 pages to print, puts request in Buffer
+Printer 2 starts printing 6 pages from Client 3
+Client 4 has 3 pages to print, puts request in Buffer
+Client 1 has 10 pages to print, puts request in Buffer
+Client 7 has 2 pages to print, puts request in Buffer
+Client 9 has 10 pages to print, puts request in Buffer
+Client 15 has 9 pages to print, puts request in Buffer
+Client 10 has 10 pages to print, puts request in Buffer
+Client 11 has 1 pages to print, puts request in Buffer
+Client 13 has 3 pages to print, puts request in Buffer
+Client 14 has 10 pages to print, puts request in Buffer
+Client 6 has 10 pages to print, puts request in Buffer
+Printer 0 finishes printing 1 pages from Client 5
+Printer 0 entering shared memory
+Printer 0 starts printing 3 pages from Client 4
+Client 12 has 7 pages to print, puts request in Buffer
+Printer 1 finishes printing 1 pages from Client 2
+Printer 1 entering shared memory
+Printer 1 starts printing 10 pages from Client 1
+Client 8 has 8 pages to print, puts request in Buffer
+Printer 0 finishes printing 3 pages from Client 4
+Printer 0 entering shared memory
+Printer 0 starts printing 2 pages from Client 7
+Printer 1 finishes printing 10 pages from Client 1
+Printer 1 entering shared memory
+Printer 1 starts printing 10 pages from Client 9
+Printer 1 finishes printing 10 pages from Client 9
+Printer 1 entering shared memory
+Printer 1 starts printing 9 pages from Client 15
+Printer 2 finishes printing 6 pages from Client 3
+Printer 2 entering shared memory
+Printer 2 starts printing 10 pages from Client 10
+Printer 0 finishes printing 2 pages from Client 7
+Printer 0 entering shared memory
+Printer 0 starts printing 1 pages from Client 11
+Printer 1 finishes printing 9 pages from Client 15
+Printer 1 entering shared memory
+Printer 1 starts printing 3 pages from Client 13
+Printer 2 finishes printing 10 pages from Client 10
+Printer 2 entering shared memory
+Printer 2 starts printing 10 pages from Client 14
+Printer 1 finishes printing 3 pages from Client 13
+Printer 1 entering shared memory
+Printer 1 starts printing 10 pages from Client 6
+Printer 2 finishes printing 10 pages from Client 14
+Printer 2 entering shared memory
+Printer 2 starts printing 7 pages from Client 12
+Printer 0 finishes printing 1 pages from Client 11
+Printer 0 entering shared memory
+Printer 0 starts printing 8 pages from Client 8
+Printer 2 finishes printing 7 pages from Client 12
+Printer 2 entering shared memory
+Printer 1 finishes printing 10 pages from Client 6
+Printer 1 entering shared memory
+Printer 0 finishes printing 8 pages from Client 8
+Printer 0 entering shared memory
+
+#This is a trace from running ./non_unique_client.bash which runs 
+#5x ./client 5 &
+#3 jobs enter the buffer and are received by 3 printer-servers
+#1 job remains in buffer
+#1 job gets rejected since it’s not unique
+
+Client 5 has 4 pages to print, puts request in Buffer
+Client 5 has 6 pages to print, puts request in Buffer
+Invalid source_number; source_number must be unique
+Client 5 has 2 pages to print, puts request in Buffer
+Client 5 has 1 pages to print, puts request in Buffer
+
+
